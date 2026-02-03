@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/maharaj-portfolio/static/css/main.a0940146.css",
+    "main.js": "/maharaj-portfolio/static/js/main.46f1d6ad.js",
+    "index.html": "/maharaj-portfolio/index.html",
+    "main.a0940146.css.map": "/maharaj-portfolio/static/css/main.a0940146.css.map",
+    "main.46f1d6ad.js.map": "/maharaj-portfolio/static/js/main.46f1d6ad.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a0940146.css",
+    "static/js/main.46f1d6ad.js"
+  ]
+}
