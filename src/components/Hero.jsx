@@ -37,7 +37,7 @@ const Hero = () => {
               className="inline-block px-4 py-2 bg-primary/20 text-primary rounded-full mb-6 text-sm font-medium"
               whileHover={{ scale: 1.05 }}
             >
-              B.Tech AI & DS | Full Stack Data Scientist
+              Full Stack Developer
             </motion.div>
             
             <motion.h1 
