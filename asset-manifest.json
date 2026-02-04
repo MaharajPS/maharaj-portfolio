@@ -1,13 +1,17 @@
 {
   "files": {
-    "main.css": "/maharaj-portfolio/static/css/main.580cf2af.css",
-    "main.js": "/maharaj-portfolio/static/js/main.517d91a5.js",
+    "main.css": "/maharaj-portfolio/static/css/main.e1eaf6ff.css",
+    "main.js": "/maharaj-portfolio/static/js/main.22cadb34.js",
+    "static/media/slick.svg": "/maharaj-portfolio/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/maharaj-portfolio/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/maharaj-portfolio/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/maharaj-portfolio/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/maharaj-portfolio/index.html",
-    "main.580cf2af.css.map": "/maharaj-portfolio/static/css/main.580cf2af.css.map",
-    "main.517d91a5.js.map": "/maharaj-portfolio/static/js/main.517d91a5.js.map"
+    "main.e1eaf6ff.css.map": "/maharaj-portfolio/static/css/main.e1eaf6ff.css.map",
+    "main.22cadb34.js.map": "/maharaj-portfolio/static/js/main.22cadb34.js.map"
   },
   "entrypoints": [
-    "static/css/main.580cf2af.css",
-    "static/js/main.517d91a5.js"
+    "static/css/main.e1eaf6ff.css",
+    "static/js/main.22cadb34.js"
   ]
 }
