@@ -58,6 +58,20 @@ const Experience = () => {
             </div>
           </div>
 
+          {/* After Experience section */}
+          <section className="py-16 bg-secondary/20">
+            <div className="container mx-auto px-6 text-center max-w-4xl">
+              <h2 className="text-4xl font-bold mb-4">What Others Say</h2>
+              <div className="bg-secondary/50 backdrop-blur-sm p-8 rounded-2xl border border-primary/30 mt-8">
+                <div className="text-5xl mb-4 text-accent">"</div>
+                <p className="text-xl italic text-gray-300 mb-6">
+                  Maharaj delivered our face recognition system 2 weeks ahead of schedule. His attention to edge cases saved us from major deployment issues.
+                </p>
+                <div className="font-bold text-primary">— Project Lead, PunchBiz</div>
+              </div>
+            </div>
+          </section>
+
           {/* Certifications */}
           <div>
             <h3 className="text-2xl font-bold mb-8 text-primary">Certifications</h3>

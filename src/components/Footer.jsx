@@ -12,7 +12,7 @@ const Footer = () => {
           transition={{ delay: 0.3 }}
         >
           <p className="text-gray-400 mb-2">
-            Designed by <span className="text-primary font-bold">Maharaj P S</span>
+            Developed by <span className="text-primary font-bold">Maharaj P S</span>
           </p>
           <p className="text-gray-500 text-sm">
             © {new Date().getFullYear()} Maharaj P S. All rights reserved.

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
+import { FiMenu, FiX } from 'react-icons/fi';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,11 +14,17 @@ const Navbar = () => {
   }, []);
 
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsOpen(false);
+    if (sectionId === 'home') {
+      // Scroll to top of page
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Scroll to specific section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
+    setIsOpen(false);
   };
 
   return (
@@ -27,10 +33,10 @@ const Navbar = () => {
     }`}>
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center">
-          {/* Logo */}
+          {/* Logo - Click to go home */}
           <div 
             className="text-2xl font-bold cursor-pointer"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onClick={() => scrollToSection('home')}
           >
             <span className="text-primary">M</span>
             <span className="text-accent">A</span>
@@ -43,6 +49,12 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-10">
+            <button 
+              onClick={() => scrollToSection('home')}
+              className="hover:text-primary transition-colors font-medium"
+            >
+              Home
+            </button>
             <button 
               onClick={() => scrollToSection('about')}
               className="hover:text-primary transition-colors font-medium"
@@ -88,6 +100,12 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden mt-6 bg-secondary/95 backdrop-blur-md rounded-lg p-4">
             <div className="flex flex-col space-y-4">
+              <button 
+                onClick={() => scrollToSection('home')}
+                className="hover:text-primary transition-colors font-medium text-left py-2"
+              >
+                Home
+              </button>
               <button 
                 onClick={() => scrollToSection('about')}
                 className="hover:text-primary transition-colors font-medium text-left py-2"

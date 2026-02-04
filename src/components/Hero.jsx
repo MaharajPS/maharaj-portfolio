@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiMail, FiPhone, FiChevronDown } from 'react-icons/fi';
+import { FiMail, FiPhone, FiChevronDown,FiDownload } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
@@ -22,6 +22,20 @@ const Hero = () => {
     }
   };
 
+  const scrollToProjects = () => {
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-24">
       <div className="container mx-auto px-6">
@@ -37,7 +51,7 @@ const Hero = () => {
               className="inline-block px-4 py-2 bg-primary/20 text-primary rounded-full mb-6 text-sm font-medium"
               whileHover={{ scale: 1.05 }}
             >
-              Full Stack Developer
+              B.Tech AI & DS | Full Stack Developer
             </motion.div>
             
             <motion.h1 
@@ -59,18 +73,32 @@ const Hero = () => {
               className="flex flex-wrap gap-4 mb-10"
               variants={itemVariants}
             >
-              <a
-                href="#contact"
+              <motion.button
+                onClick={scrollToContact}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 className="px-6 py-3 bg-primary hover:bg-indigo-700 rounded-lg font-medium transition-colors flex items-center gap-2"
               >
                 <FiMail /> Contact Me
-              </a>
-              <a
-                href="#projects"
+              </motion.button>
+              <motion.button
+                onClick={scrollToProjects}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 className="px-6 py-3 bg-secondary hover:bg-gray-800 rounded-lg font-medium transition-colors flex items-center gap-2"
               >
                 View Projects <FiChevronDown className="ml-1" />
-              </a>
+              </motion.button>
+                {/* ✅ NEW: Download Resume Button */}
+                <motion.a
+                  href="/maharaj_resume.pdf"
+                  download="Maharaj_Resume.pdf"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-6 py-3 bg-accent hover:bg-emerald-600 rounded-lg font-medium transition-colors flex items-center gap-2"
+                >
+                  <FiDownload /> Download Resume
+                </motion.a>
             </motion.div>
             
             <motion.div 
@@ -86,7 +114,7 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Column - Image/Animation */}
+          {/* Right Column - Profile Image */}
           <motion.div 
             variants={itemVariants}
             className="hidden md:block"
@@ -96,12 +124,32 @@ const Hero = () => {
               <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/20 rounded-full animate-pulse"></div>
               <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-accent/20 rounded-full animate-pulse"></div>
               
-              {/* Main Card */}
-              <div className="relative bg-secondary/50 backdrop-blur-lg rounded-2xl p-8 border border-primary/30 shadow-2xl">
+              {/* Main Card with Profile Image */}
+              <div className="relative bg-secondary/50 backdrop-blur-lg rounded-2xl p-6 md:p-8 border border-primary/30 shadow-2xl">
                 <div className="text-center">
-                  <div className="w-48 h-48 bg-gradient-to-br from-primary to-accent rounded-full mx-auto mb-6 flex items-center justify-center">
-                    <span className="text-6xl font-bold text-white">M</span>
+                  {/* Profile Image */}
+                  <div className="relative inline-block mb-6">
+                    {/* Outer Glow Ring */}
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary to-accent opacity-30 blur-xl animate-pulse"></div>
+                    
+                    {/* Image Container */}
+                    <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-secondary shadow-2xl">
+                      <img
+                        src='/maharaj.jpeg'  // Path to your image in public folder
+                        alt="Maharaj P S"
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          // Fallback if image fails to load
+                          e.target.onerror = null;
+                          e.target.src = "https://ui-avatars.com/api/?name=Maharaj+P+S&background=6366f1&color=fff&size=200";
+                        }}
+                      />
+                    </div>
+                    
+                    {/* Online Status Badge */}
+                    <div className="absolute bottom-2 right-2 w-5 h-5 bg-green-500 rounded-full border-2 border-secondary"></div>
                   </div>
+                  
                   <h3 className="text-2xl font-bold mb-2">Maharaj P S</h3>
                   <p className="text-gray-400 mb-4">AI & Data Science Engineer</p>
                   
