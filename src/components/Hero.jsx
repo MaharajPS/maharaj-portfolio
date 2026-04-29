@@ -1,6 +1,8 @@
 import React from 'react';
 import { FiMail, FiPhone, FiChevronDown,FiDownload } from 'react-icons/fi';
 import { motion } from 'framer-motion';
+import profileImg from '../assert/Profile.jpeg';
+
 
 const Hero = () => {
   const containerVariants = {
@@ -92,7 +94,7 @@ const Hero = () => {
                 {/* ✅ NEW: Download Resume Button */}
                 <motion.a
                   href="/Maharaj_P_S.pdf"
-                  download="Maharaj_Resume.pdf"
+                  download="Maharaj_resume.pdf"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-6 py-3 bg-accent hover:bg-emerald-600 rounded-lg font-medium transition-colors flex items-center gap-2"
@@ -135,13 +137,13 @@ const Hero = () => {
                     {/* Image Container */}
                     <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-secondary shadow-2xl">
                       <img
-                        src='/maharaj.jpeg'  // Path to your image in public folder
+                        src={profileImg}  // Path to your image in public folder
                         alt="Maharaj P S"
                         className="w-full h-full object-cover"
                         onError={(e) => {
                           // Fallback if image fails to load
                           e.target.onerror = null;
-                          e.target.src = "https://ui-avatars.com/api/?name=Maharaj+P+S&background=6366f1&color=fff&size=200";
+                          e.target.src = "https://ui-avatars.com/api/?name=M&background=6366f1&color=fff&size=200";
                         }}
                       />
                     </div>
